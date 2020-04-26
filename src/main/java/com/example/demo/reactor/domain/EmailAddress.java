@@ -1,5 +1,8 @@
 package com.example.demo.reactor.domain;
 
+import lombok.Getter;
+
+@Getter
 public class EmailAddress {
 
     private String localPart;
