@@ -15,5 +15,12 @@ public class EmailAddress {
         return emailAddress;
     }
 
+    @Override
+    public String toString() {
+        return new StringBuilder(localPart)
+                .append("@")
+                .append(domainPart)
+                .toString();
+    }
 
 }
