@@ -1,5 +1,6 @@
 package com.example.demo.reactor.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DistributionLists {
@@ -19,4 +20,13 @@ public class DistributionLists {
             EmailAddress.of("andy", "test.com"),
             EmailAddress.of("nicole", "test.com")
     );
+
+    public static final List<EmailAddress> DEV_DEPT;
+
+    static {
+        DEV_DEPT = new ArrayList<>();
+        DEV_DEPT.addAll(AD_TEAM);
+        DEV_DEPT.addAll(API_TEAM);
+        DEV_DEPT.addAll(WEB_TEAM);
+    }
 }
