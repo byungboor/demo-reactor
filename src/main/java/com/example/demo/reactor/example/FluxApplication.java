@@ -6,16 +6,16 @@ import java.util.function.Consumer;
 
 public class FluxApplication {
 
-    public static Consumer<Integer> integerConsumer = null; // TODO #2 fix it!
+    public static Consumer<Long> integerConsumer = l -> System.out.println(">> " + l);
 
     public static void main(String[] args) {
         FluxApplication fluxApplication = new FluxApplication();
         fluxApplication.getIntSequenceFlux()
                 .doOnNext(integerConsumer)
-                .subscribe();
+                .blockLast();
     }
 
-    public Flux<Integer> getIntSequenceFlux() {
-        return Flux.empty(); // <- TODO #1 create integer sequence flux with interval() or range();
+    public Flux<Long> getIntSequenceFlux() {
+        return Flux.just(1L, 2L, 3L).log();
     }
 }
