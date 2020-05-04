@@ -30,7 +30,7 @@ public class ScheduleApplication {
                 .subscribeOn(Schedulers.parallel()) // async or sync ?
                 .doOnNext(threadNamePrinter)
                 .subscribe();
-
+        
         System.out.println("DONE --------------------------");
         TimeUnit.SECONDS.sleep(10);
         System.out.println("Finished --------------------------");
