@@ -15,7 +15,7 @@ public class EmailAddressController {
         this.emailAddressService = emailAddressService;
     }
 
-    @RequestMapping("/emailAddresses/")
+    @RequestMapping("/v1/emailAddresses/")
     public Flux<EmailAddress> getEmailAddresses() {
         return emailAddressService.getAllEmailAddresses();
     }
